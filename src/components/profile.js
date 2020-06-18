@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import { Input } from 'reactstrap';
 import firebase from 'firebase';
-import logo from '../pictures/calendar.png';
+import logo from '../pictures/DartCalLogo.png';
+import settings from '../pictures/settings.png';
 import noUserPic from '../pictures/noUser.png'
 import blankPic from '../pictures/nofriend.png'
 import { NavLink, withRouter } from 'react-router-dom';
@@ -366,15 +367,60 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="all">
-        <NavLink to="/calendar" class="logo">
-          <div className="dartCalLogoProfile">
-            DartCal
-            <div className="scheduleLogo">
-              <img width="80px" src={logo}/>
+      <div className="allProfile">
+        <div className="navBar">
+            <div className="dartCalLogoNav">
+                DartCal
+                <img width="45px" src={logo} style={{'margin-left':'5%', 'verticalAlign': 'text-top'}}/>
+            </div>
+        </div>
+
+        <div className="infoBlock">
+          <div className="profImage">
+          {this.state.editing
+            ? <div>
+              <h6>Insert Image URL</h6>  
+              <Input className="response"  placeholder="Image URL " onChange={this.onImageChange}  value={this.state.image} />
               </div>
+             :<img class="profile" src={this.state.image} width="150" height="150" style={{'border-color':'#000000'}}/>
+            }
           </div>
-        </NavLink>
+          <div className="name">
+            {this.state.editing
+             ? <Input onChange={this.onUsernameChange} value={`${this.state.userFirstName} ${this.state.userLastName}`} />
+              :<h6>{`${this.state.userFirstName} ${this.state.userLastName}`} '{this.state.userYear.substring(2)}</h6>
+            }
+          </div>
+          <div style={{'position': 'relative', 'top': '-3%'}}>
+            {this.state.editing
+            ? <Button onClick={this.toggleEdit} className="setting">Save Profile</Button>
+            :<Button className="setting" onClick={this.toggleEdit}>
+              <img width="24px" src={settings} style={{'position': 'relative', 'top': '6px', 'left': '-10px'}}/>
+              Edit Profile
+              </Button>
+            }
+          </div>
+          <div class="infoContainer">
+              EMAIL:
+              <br/>
+              {this.state.userEmail}
+              <br/>
+              PASSWORD:
+              <br/>
+              ***********
+              
+          </div>
+
+
+      
+
+
+        </div>
+
+
+
+        {/*
+
         <div className="profileinfo">
           <div>
             <h3 className="sectionHeader">Profile</h3>
@@ -503,6 +549,9 @@ class Profile extends Component {
             Calendar
           </NavLink>
         </div>
+        */}
+
+
       </div>
     );
   }
