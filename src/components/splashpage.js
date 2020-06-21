@@ -5,6 +5,12 @@ import { Input } from 'reactstrap';
 import firebase from 'firebase';
 import logo from '../pictures/DartCalLogo.png';
 import background from '../pictures/splashBackground.png';
+import connect from '../pictures/connect.png';
+import lily from '../pictures/lily.png';
+import dylan from '../pictures/dylan.png';
+import kat from '../pictures/kat.png';
+import scotty from '../pictures/scott.png';
+import will from '../pictures/william.png';
 import { NavLink, withRouter } from 'react-router-dom';
 import * as db from './datastore';
 import '../cssfolder/splashpage.css';
@@ -46,7 +52,7 @@ class SplashPage extends Component {
 
   render() {
     return (
-      <div className="allSignIn" >
+      <div className="allSignIn" style={{height:'250vh'}}>
         <div className="navBar">
             <div className="dartCalLogoNav">
                 DartCal
@@ -59,20 +65,58 @@ class SplashPage extends Component {
         </div>
         <div className="landing">
             <div className="tint"></div>
-            <img src={background} id="tint" style={{position: 'static', width:'100%', margin:'0%'}}/>
+            <img src={background} id="tint" style={{position: 'static', width:'100%', margin:'0%', top: '0%'}}/>
         </div>
         <div className="welcomeBox">
             <h4 style={{position:'relative', top:'-20px'}}>Welcome to DartCal</h4>
-            <h5 style={{position:'relative', top:'-60px'}}>Mission Statement</h5>
+            <h5 style={{position:'relative', top:'-50px', fontSize:'24px'}}>a social calendar for a social community</h5>
         </div>
         <div className="splashServices" >
-            Our Services
-        </div>
-        <div className="splashPartners" >
-            Our Partners
+            <h1>Our Services</h1>
+            <div className="organizeContainer">
+              <img height="100px" src={logo} ></img>
+              <h5 id="noMargin">organize</h5>
+              <p>A central site to facilitate social, academic, and extra-curricular activities.</p>
+            </div>
+            <div className="connectContainer">
+              <img height="100px" src={connect} ></img>
+              <h5 id="noMargin">connect</h5>
+              <p>A platform to connect friends across the Dartmouth commmunity.</p>
+            </div>
         </div>
         <div className="splashTeam" >
-            Our Team
+            <h1>Our Team</h1>
+            <div className="ourTeam" style={{flexDirection:'row', flexWrap: 'wrap', width:'auto'}}>
+              <div className="teamMember">
+                  <img src={lily}/>
+                  <p style={{fontWeight:'bold'}}>Lily Maechling</p>
+                  <p>Founder &#38; </p>
+                  <p>Web Developer</p>
+              </div>
+              <div className="teamMember">
+                  <img src={dylan}/>
+                  <p style={{fontWeight:'bold'}}>Dylan Bienstock</p>
+                  <p>Founder &#38; </p>
+                  <p>Web Developer</p>
+              </div>
+              <div className="teamMember">
+                  <img src={kat}/>
+                  <p style={{fontWeight:'bold'}}>Katherine Lasonde</p>
+                  <p>Founder &#38; </p>
+                  <p>Web Developer</p>
+              </div>
+              <div className="teamMember">
+                  <img src={scotty}/>
+                  <p style={{fontWeight:'bold'}}>Scott Gibbons</p>
+                  <p>Founder &#38; </p>
+                  <p>Web Developer</p>
+              </div>
+              <div className="teamMember">
+                  <img src={will}/>
+                  <p style={{fontWeight:'bold'}}>William Perez</p>
+                  <p>UI/UX Designer</p>
+              </div>
+            </div>
         </div>
       </div>
     );
