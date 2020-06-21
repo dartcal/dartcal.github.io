@@ -47,8 +47,8 @@
   /* Rectangle 70 */
 
 
-  position: absolute;
-  width: 382px;
+  position: relative;
+  width: 25%;
   height: 754.02px;
   left: 28px;
   top: 113px;
@@ -95,10 +95,10 @@ Button.setting{
 
 .infoContainer{
   position: relative;
-  top: 5%; 
-  text-align: left;
-  left: 10%; 
-  width: 80%; 
+  top: -5%; 
+  left: 5%;
+  text-align: left; 
+  width: 100%; 
   font-size: 24px;
   font-weight: 300;
   margin-top: 10px;
@@ -106,8 +106,62 @@ Button.setting{
   margin-right: 15px;
   margin-left: 8px;
 
+
 }
 
+p.info{
+  
+  font-weight: 300;
+  text-align: left;
+  line-height: 29px;
+
+  
+}
+
+.classContainer{
+  position: absolute;
+  width: 70%;
+  height: 25%;
+  left: 30%;
+  top: 16%;
+
+}
+li{
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  width: 195px;
+  height: 195px;  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  opacity: 0.5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 96px;
+  font-weight: 300;
+  font-size: 24px;
+  padding-left: 60px;
+  margin-left: -40px;
+  margin-right: 80px;
+
+  margin-top: -10px;
+  
+}
+ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.clubContainer{
+  position: absolute;
+  width: 70%;
+  height: 25%;
+  left: 30%;
+  top: 47%;
+
+}
 
 
 

@@ -278,25 +278,27 @@ class Profile extends Component {
   }
 
   renderClubs = () => {
-  
+    this.state.clubList[0] = "club1"
+    this.state.clubList[1] = "club2"
+    this.state.clubList[2] = "club3"
  
     return (
       <div> 
          <ul>
          { (this.state.clubList.length > 0) 
-        ? <li>{this.state.clubList[0]}</li>
+        ? <li style={{'background-color': 'green'}}>{this.state.clubList[0]}</li>
         : <div> </div>
          }
          { (this.state.clubList.length > 1) 
-        ? <li>{this.state.clubList[1]}</li>
+        ? <li style={{'background-color': 'green'}}>{this.state.clubList[1]}</li>
         : <div> </div>
          }
          { (this.state.clubList.length > 2) 
-        ? <li>{this.state.clubList[2]}</li>
+        ? <li style={{'background-color': 'green'}}>{this.state.clubList[2]}</li>
         : <div> </div>
          }
          { (this.state.clubList.length > 3) 
-        ? <li>{this.state.clubList[3]}</li>
+        ? <li style={{'background-color': 'green'}}>{this.state.clubList[3]}</li>
         : <div> </div>
          }
          {this.state.editing 
@@ -312,45 +314,53 @@ class Profile extends Component {
   }
 
     renderClasses = () =>  {
-     
+      { 
+        this.state.classList[0] = "class1"
+        this.state.classList[1] = "class2"
+        this.state.classList[2] = "class3"
+        this.state.classList[3] = "class4"
+    }
         return (
           <div> 
+            
           <ul>
           { (this.state.classList.length > 0) 
-         ? <li>{this.state.classList[0]}</li>
+         ? <li style={{'background-color': '#FFBA09', 'color': '#000000'}}>{this.state.classList[0]}</li>
          : <div> </div>
           }
           { (this.state.classList.length > 1) 
-         ? <li>{this.state.classList[1]}</li>
+         ? <li style={{'background-color': '#A055DA'}}>{this.state.classList[1]}</li>
          : <div> </div>
           }
           { (this.state.classList.length > 2) 
-         ? <li>{this.state.classList[2]}</li>
+         ? <li style={{'background-color': '#F265A0'}}>{this.state.classList[2]}</li>
          : <div> </div>
           }
           { (this.state.classList.length > 3) 
-         ? <li>{this.state.classList[1]}</li>
+         ? <li>{this.state.classList[3]}</li>
          : <div> </div>
           }
           {this.state.editing 
             ?    <li>
             <Input className="response" placeholder="ex. ENGL37" onChange={this.onClassChange} value={this.state.newClass} />
-            <div class="dropdown">
-              <button class="dropbtn">Class Block</button>
-              <div class="dropdown-content">
-                <a href="#" onClick={() => this.addNewClass("8")} >8</a>
-                <a href="#" onClick={() => this.addNewClass("9S")}>9S</a>
-                <a href="#" onClick={() => this.addNewClass("9L")}>9L</a>
-                <a href="#" onClick={() => this.addNewClass("10")}>10</a>
-                <a href="#" onClick={() => this.addNewClass("11")}>11</a>
-                <a href="#" onClick={() => this.addNewClass("12")}>12</a>
-                <a href="#" onClick={() => this.addNewClass("2")}>2</a>
-                <a href="#" onClick={() => this.addNewClass("3A")}>3A</a>
-                <a href="#" onClick={() => this.addNewClass("6A")}>6A</a>
-                <a href="#" onClick={() => this.addNewClass("10A")}>10A</a>
-                <a href="#" onClick={() => this.addNewClass("2A")}>2A</a>
-                <a href="#" onClick={() => this.addNewClass("3B")}>3B</a>
-                <a href="# " onClick={() => this.addNewClass("6B")}>6B</a>
+            <div class="tempblock">
+              <div class="dropdown">
+                <button class="dropbtn">Class Block</button>
+                <div class="dropdown-content">
+                  <a href="#" onClick={() => this.addNewClass("8")} >8</a>
+                  <a href="#" onClick={() => this.addNewClass("9S")}>9S</a>
+                  <a href="#" onClick={() => this.addNewClass("9L")}>9L</a>
+                  <a href="#" onClick={() => this.addNewClass("10")}>10</a>
+                  <a href="#" onClick={() => this.addNewClass("11")}>11</a>
+                  <a href="#" onClick={() => this.addNewClass("12")}>12</a>
+                  <a href="#" onClick={() => this.addNewClass("2")}>2</a>
+                  <a href="#" onClick={() => this.addNewClass("3A")}>3A</a>
+                  <a href="#" onClick={() => this.addNewClass("6A")}>6A</a>
+                  <a href="#" onClick={() => this.addNewClass("10A")}>10A</a>
+                  <a href="#" onClick={() => this.addNewClass("2A")}>2A</a>
+                  <a href="#" onClick={() => this.addNewClass("3B")}>3B</a>
+                  <a href="#" onClick={() => this.addNewClass("6B")}>6B</a>
+                </div>
               </div>
             </div>
           </li> 
@@ -401,21 +411,24 @@ class Profile extends Component {
             }
           </div>
           <div class="infoContainer">
-              EMAIL:
-              <br/>
-              {this.state.userEmail}
-              <br/>
-              PASSWORD:
-              <br/>
-              ***********
-              
+              <p className="info" style={{'font-size': '24px'}}>EMAIL:</p>
+              <p className="info" style={{'margin-top': '-15px', 'margin-bottom': '30px', 'font-size': '18px'}}>{this.state.userEmail}</p>
+              <p className="info" style={{'font-size': '24px'}}>PASSWORD:</p>
+              <p className="info" style={{'margin-top': '-15px', 'margin-bottom': '30px', 'font-size': '18px'}}>***********</p>
           </div>
-
-
-      
-
-
         </div>
+
+        <div class="classContainer">
+          <h3 style={{'text-align': 'left', 'margin-top': '-3px'}}>CLASSES</h3>
+          {this.renderClasses()}
+        </div>
+
+        <div class="clubContainer">
+          <h3 style={{'text-align': 'left', 'margin-top': '-3px'}}>CLUBS</h3>
+          {this.renderClubs()}
+        </div>
+
+
 
 
 
