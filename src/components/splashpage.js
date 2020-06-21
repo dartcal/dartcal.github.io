@@ -11,6 +11,9 @@ import dylan from '../pictures/dylan.png';
 import kat from '../pictures/kat.png';
 import scotty from '../pictures/scott.png';
 import will from '../pictures/william.png';
+import instagram from '../pictures/instagram.png';
+import facebook from '../pictures/facebook.png';
+import twitter from '../pictures/twitter.png';
 import { NavLink, withRouter } from 'react-router-dom';
 import * as db from './datastore';
 import '../cssfolder/splashpage.css';
@@ -52,7 +55,7 @@ class SplashPage extends Component {
 
   render() {
     return (
-      <div className="allSignIn" style={{height:'250vh'}}>
+      <div className="allSignIn" style={{height:'270vh'}}>
         <div className="navBar">
             <div className="dartCalLogoNav">
                 DartCal
@@ -86,7 +89,7 @@ class SplashPage extends Component {
         </div>
         <div className="splashTeam" >
             <h1>Our Team</h1>
-            <div className="ourTeam" style={{flexDirection:'row', flexWrap: 'wrap', width:'auto'}}>
+            <div className="ourTeam" >
               <div className="teamMember">
                   <img src={lily}/>
                   <p style={{fontWeight:'bold'}}>Lily Maechling</p>
@@ -117,6 +120,24 @@ class SplashPage extends Component {
                   <p>UI/UX Designer</p>
               </div>
             </div>
+        </div>
+        <div className="footer">
+          <div style={{ marginTop:'1%', width:'35%'}}>
+            <span style={{fontStyle:'italic'}}>Questions, Comments, Concerns?</span>
+            <span>Email - dartcal.team@gmail.com</span>
+          </div>
+          <div className="dartCalLogoFoot">
+            DartCal
+            <img width="45px" src={logo} style={{'margin-left':'5%', verticalAlign: 'text-top'}}/>
+          </div>
+          <div className="footerSocial">
+            <span style={{fontStyle:'italic'}}>Connect with us</span>
+            <div classsName="footerSocialMediaIcons">
+              <img src={instagram} width='30px' />
+              <img src={facebook} width='30px' />
+              <img src={twitter} width='30px' />
+            </div>
+          </div>
         </div>
       </div>
     );

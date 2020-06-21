@@ -142,7 +142,7 @@ h1{
 p{
     font-style: normal;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 29px;
     text-align: center;
     text-transform: uppercase;
@@ -159,16 +159,78 @@ p{
     position: absolute;
     top: 150%;
     width: 100%;
+}
 
+.ourTeam{
+    position: absolute;
+    top: 100%;
+    width: 80%;
+    left: 10%;
+
+
+    flex-direction: row; 
     display: flex;
-    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
 .teamMember{
-    position: relative;
     height: 300px;
     width: 300px;
-    flex-direction: column;
 }
 
+.footer{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    top: 260%;
+    background-color: #E1E3E2;
+    align-content: center;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+.dartCalLogoFoot{
+    position: absolute;
+    width: 30%;
+    top: 2%;
+    left: 35%;
+
+    /* Header I */
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 63px;
+    text-align: center;
+    text-transform: uppercase;
+
+    /* Grey - 4 */
+    color: #565C57;
+    vertical-align: middle;
+    flex-direction: row;
+}
+
+.footerSocial
+{
+    position: absolute;
+    height: 90%;
+    width: 25%;
+    left: 75%;
+    top: 10%;
+    align-items: center;
+    text-align: center;
+}
+
+span{
+    font-family: Montserrat;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+}
