@@ -11,6 +11,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import * as db from './datastore';
 import '../cssfolder/profile.css';
 import noFriends from '../pictures/nofriend.png';
+import Modal from './profilemodal';
 
 
 
@@ -19,6 +20,7 @@ class Profile extends Component {
     super(props);
 
     this.state = {
+      isOpen: false, 
       userID: 'no user ID',
       userEmail: 'no email',
       userFirstName: ' first ',
@@ -97,6 +99,7 @@ class Profile extends Component {
     
 
      this.setState({
+        isOpen: false, 
         userID: currUser.userID,
         userEmail: currUser.userEmail,
         userFirstName: currUser.userFirstName,
@@ -277,6 +280,20 @@ class Profile extends Component {
     })
   }
 
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
   renderClubs = () => {
     this.state.clubList[0] = "club1"
     this.state.clubList[1] = "club2"
@@ -286,19 +303,19 @@ class Profile extends Component {
       <div> 
          <ul>
          { (this.state.clubList.length > 0) 
-        ? <li style={{'background-color': 'green'}}>{this.state.clubList[0]}</li>
+        ? <li style={{'background-color': '#ADCC80'}}>{this.state.clubList[0]}</li>
         : <div> </div>
          }
          { (this.state.clubList.length > 1) 
-        ? <li style={{'background-color': 'green'}}>{this.state.clubList[1]}</li>
+        ? <li style={{'background-color': '#ADCC80'}}>{this.state.clubList[1]}</li>
         : <div> </div>
          }
          { (this.state.clubList.length > 2) 
-        ? <li style={{'background-color': 'green'}}>{this.state.clubList[2]}</li>
+        ? <li style={{'background-color': '#ADCC80'}}>{this.state.clubList[2]}</li>
         : <div> </div>
          }
          { (this.state.clubList.length > 3) 
-        ? <li style={{'background-color': 'green'}}>{this.state.clubList[3]}</li>
+        ? <li style={{'background-color': '#ADCC80'}}>{this.state.clubList[3]}</li>
         : <div> </div>
          }
          {this.state.editing 
@@ -315,25 +332,44 @@ class Profile extends Component {
 
     renderClasses = () =>  {
       { 
-        this.state.classList[0] = "class1"
-        this.state.classList[1] = "class2"
-        this.state.classList[2] = "class3"
-        this.state.classList[3] = "class4"
+        // this.state.classList[0] = "class1"
+        // this.state.classList[1] = "class2"
+        // this.state.classList[2] = "class3"
+        this.state.classList.splice(0);
+        
     }
         return (
           <div> 
+            <div className="addEventModal">
+              <Modal show={this.state.isOpen} save={this.saveInfo} onClose={this.toggleModal}>
+              <div className="newEventInfo">
+                      <div className="inputline"> 
+                        Subject Area: &nbsp;
+                        <Input type="text" placeholder="Event Name" value={this.state.eventTitle} onChange={this.createEventTitle}/>
+                        Course Number: &nbsp;
+                        <Input type="text" placeholder="Event Name" value={this.state.eventTitle} onChange={this.createEventTitle}/>
+                        Period: &nbsp;
+                        <Input type="text" placeholder="Event Name" value={this.state.eventTitle} onChange={this.createEventTitle}/>
+                      </div>
+                  </div>  
+              </Modal>
+            </div>
             
           <ul>
+          { (this.state.classList.length == 0) 
+         ? <li style={{'background-color': '#C3C8C3', 'padding-left': '10px', 'font-size': '23px'}}><Button  onClick={this.toggleModal} style={{'cursor': 'pointer'}}>+ ADD A CLASS</Button></li>
+         : <div> </div>
+          }
           { (this.state.classList.length > 0) 
-         ? <li style={{'background-color': '#FFBA09', 'color': '#000000'}}>{this.state.classList[0]}</li>
+         ? <li style={{'background-color': '#F8DD96'}}></li>
          : <div> </div>
           }
           { (this.state.classList.length > 1) 
-         ? <li style={{'background-color': '#A055DA'}}>{this.state.classList[1]}</li>
+         ? <li style={{'background-color': '#CFAAEC'}}>{this.state.classList[1]}</li>
          : <div> </div>
           }
           { (this.state.classList.length > 2) 
-         ? <li style={{'background-color': '#F265A0'}}>{this.state.classList[2]}</li>
+         ? <li style={{'background-color': '#F8B2CF'}}>{this.state.classList[2]}</li>
          : <div> </div>
           }
           { (this.state.classList.length > 3) 
@@ -405,7 +441,7 @@ class Profile extends Component {
             {this.state.editing
             ? <Button onClick={this.toggleEdit} className="setting">Save Profile</Button>
             :<Button className="setting" onClick={this.toggleEdit}>
-              <img width="24px" src={settings} style={{'position': 'relative', 'top': '6px', 'left': '-10px'}}/>
+              <img width="30px" src={settings} style={{'position': 'relative', 'top': '6px', 'left': '-10px'}}/>
               Edit Profile
               </Button>
             }
