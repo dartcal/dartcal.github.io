@@ -12,6 +12,7 @@ import * as db from './datastore';
 import '../cssfolder/profile.css';
 import noFriends from '../pictures/nofriend.png';
 import Modal from './profilemodal';
+import arrow from '../pictures/downarrow.png'
 
 
 
@@ -332,36 +333,57 @@ class Profile extends Component {
 
     renderClasses = () =>  {
       { 
-        // this.state.classList[0] = "class1"
-        // this.state.classList[1] = "class2"
-        // this.state.classList[2] = "class3"
-        this.state.classList.splice(0);
+        this.state.classList[0] = "class1"
+        this.state.classList[1] = "class2"
+        this.state.classList[2] = "class3"
+        this.state.classList.splice(3);
         
     }
         return (
           <div> 
             <div className="addEventModal">
               <Modal show={this.state.isOpen} save={this.saveInfo} onClose={this.toggleModal}>
-              <div className="newEventInfo">
-                      <div className="inputline"> 
-                        Subject Area: &nbsp;
-                        <Input type="text" placeholder="Event Name" value={this.state.eventTitle} onChange={this.createEventTitle}/>
-                        Course Number: &nbsp;
-                        <Input type="text" placeholder="Event Name" value={this.state.eventTitle} onChange={this.createEventTitle}/>
-                        Period: &nbsp;
-                        <Input type="text" placeholder="Event Name" value={this.state.eventTitle} onChange={this.createEventTitle}/>
-                      </div>
-                  </div>  
+              <div class="wordContainer">
+                <h6 className="word">SUBJECT AREA:</h6>
+                <h6 className="word">COURSE NUMBER:</h6>
+                <h6 className="word">PERIOD:</h6>
+                <h6 className="word">COLOR:</h6>
+              </div>
+              <div class="inputContainer">
+                <Input style={{'margin': '18px'}} type="text" placeholder="" value={this.state.eventTitle} onChange={this.createEventTitle}/>
+                <Input style={{'margin': '18px'}} type="text" placeholder="" value={this.state.eventTitle} onChange={this.createEventTitle}/>
+
+                <div class="dropdown">
+                  <Button className="dropbtn"><img src={arrow} style={{'position': 'absolute', 'left': '80%', 'top': '38%'}}></img></Button>
+                  <div class="dropdown-content">
+                    <a href="#" onClick={() => this.addNewClass("8")} >8</a>
+                    <a href="#" onClick={() => this.addNewClass("9S")}>9S</a>
+                    <a href="#" onClick={() => this.addNewClass("9L")}>9L</a>
+                    <a href="#" onClick={() => this.addNewClass("10")}>10</a>
+                    <a href="#" onClick={() => this.addNewClass("11")}>11</a>
+                    <a href="#" onClick={() => this.addNewClass("12")}>12</a>
+                    <a href="#" onClick={() => this.addNewClass("2")}>2</a>
+                    <a href="#" onClick={() => this.addNewClass("3A")}>3A</a>
+                    <a href="#" onClick={() => this.addNewClass("6A")}>6A</a>
+                    <a href="#" onClick={() => this.addNewClass("10A")}>10A</a>
+                    <a href="#" onClick={() => this.addNewClass("2A")}>2A</a>
+                    <a href="#" onClick={() => this.addNewClass("3B")}>3B</a>
+                    <a href="#" onClick={() => this.addNewClass("6B")}>6B</a>
+                  </div>
+                </div>
+               
+        
+              </div>
               </Modal>
             </div>
             
           <ul>
-          { (this.state.classList.length == 0) 
-         ? <li style={{'background-color': '#C3C8C3', 'padding-left': '10px', 'font-size': '23px'}}><Button  onClick={this.toggleModal} style={{'cursor': 'pointer'}}>+ ADD A CLASS</Button></li>
-         : <div> </div>
-          }
+          
           { (this.state.classList.length > 0) 
-         ? <li style={{'background-color': '#F8DD96'}}></li>
+         ? <div style={{'display': 'flex', 'flex-direction': 'row'}}>
+            <li style={{'background-color': '#F8DD96'}}>{this.state.classList[0]}</li>
+      
+          </div>
          : <div> </div>
           }
           { (this.state.classList.length > 1) 
@@ -376,32 +398,8 @@ class Profile extends Component {
          ? <li>{this.state.classList[3]}</li>
          : <div> </div>
           }
-          {this.state.editing 
-            ?    <li>
-            <Input className="response" placeholder="ex. ENGL37" onChange={this.onClassChange} value={this.state.newClass} />
-            <div class="tempblock">
-              <div class="dropdown">
-                <button class="dropbtn">Class Block</button>
-                <div class="dropdown-content">
-                  <a href="#" onClick={() => this.addNewClass("8")} >8</a>
-                  <a href="#" onClick={() => this.addNewClass("9S")}>9S</a>
-                  <a href="#" onClick={() => this.addNewClass("9L")}>9L</a>
-                  <a href="#" onClick={() => this.addNewClass("10")}>10</a>
-                  <a href="#" onClick={() => this.addNewClass("11")}>11</a>
-                  <a href="#" onClick={() => this.addNewClass("12")}>12</a>
-                  <a href="#" onClick={() => this.addNewClass("2")}>2</a>
-                  <a href="#" onClick={() => this.addNewClass("3A")}>3A</a>
-                  <a href="#" onClick={() => this.addNewClass("6A")}>6A</a>
-                  <a href="#" onClick={() => this.addNewClass("10A")}>10A</a>
-                  <a href="#" onClick={() => this.addNewClass("2A")}>2A</a>
-                  <a href="#" onClick={() => this.addNewClass("3B")}>3B</a>
-                  <a href="#" onClick={() => this.addNewClass("6B")}>6B</a>
-                </div>
-              </div>
-            </div>
-          </li> 
-           : <div></div>
-          }
+          <li style={{'padding-left': '0px'}}><Button onClick={this.toggleModal} className="addClass">+ ADD A CLASS</Button></li>
+          
           </ul>
          </div>
       );

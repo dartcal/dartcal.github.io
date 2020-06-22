@@ -112,6 +112,7 @@
     /* identical to box height */
 
     text-align: center;
+    cursor: pointer;
 
     /* Grey - 0 */
     color: #FFFFFF;
