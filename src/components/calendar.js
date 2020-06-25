@@ -1,12 +1,10 @@
-/* eslint no-alert: 0 */
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Modal from './modal';
 import { Input } from 'reactstrap';
-//import firebase from 'firebase';
-import logo from '../pictures/calendar.png';
-import userpic from '../pictures/user.png';
-import search from '../pictures/magnifying-glass.png'
+import logo from '../pictures/DartCalLogo.png';
+import userpic from '../pictures/profileuser.png';
+import search from '../pictures/search.png';
 import plus from '../pictures/plus.png';
 import { NavLink, withRouter } from 'react-router-dom';
 import FullCalendar from '@fullcalendar/react'
@@ -15,7 +13,6 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid'
 import * as db from './datastore';
-import ReactSearchBox from 'react-search-box';
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -371,23 +368,17 @@ class Calendar extends React.Component {
 
     return (
       <div className="allCal">
-        <div className="calProfileIcon">
-          <NavLink to="/profile"> 
-          <div><img width="40px" src={userpic} style={{ 'vertical-align':'middle', 'mix-blend-mode': 'soft-light'}}/></div> 
-          </NavLink> &nbsp;
-          <NavLink to="/profile"><div style={{ 'margin-top':'5px'}}>Profile</div></NavLink>
-        </div>
-        <div className="dartCalLogoCal">
-            DartCal
-            <div className="scheduleLogo">
-                <img width="40px" src={logo}/>
-            </div>
-        </div>
-        <div className="logoutIconCal">
-              <NavLink to="/searchfriends">
-              <div><img width="50px" src="https://cdn3.iconfinder.com/data/icons/mixed-communication-and-ui-pack-1/48/general_pack_NEW_glyph_logout_signout-512.png" style={{ 'vertical-align':'center', 'mix-blend-mode': 'soft-light'}}/></div>
-              </NavLink> &nbsp;
-              <NavLink to="/"><div style={{ 'margin-top':'10px'}} onClick={db.signOut} >Logout</div></NavLink>
+        <div className="navBar">
+          <div className="dartCalLogoNav">
+              DARTCAL
+              <img width="45px" src={logo} style={{'margin-left':'5%', verticalAlign: 'text-top'}}/>
+          </div>
+          <NavLink to="/searchfriends">
+            <img src={search} id='navIcon'></img>
+          </NavLink>
+          <NavLink to="/profile">
+            <img src={userpic} id='navIcon' style={{left:'92%'}}></img>
+          </NavLink>
         </div>
       <div className="cal">
         {cal}

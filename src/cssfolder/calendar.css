@@ -11,6 +11,14 @@
     text-align: center;
 }
 
+#navIcon{
+    position: fixed;
+    height: 60px;
+    left: 85%;
+    top: 1%;
+    margin: 0px;
+}
+
 .cal{
     position: absolute;
     width: 78%;
@@ -20,6 +28,7 @@
     font-family: Montserrat;
     font-style: normal;
     background-color: white;
+    z-index: 0;
 }
 .sidebar {
     position: sticky;
@@ -68,22 +77,6 @@
     font-size: 22px;
 }
 
-.dartCalLogoCal {
-    position: absolute;
-    top: 1%;
-    left: 37.5%;
-    
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 35px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 30%;
-    height: auto;
-    color: white;
-}
 
 .checkbox{
     color: #1D263B;
@@ -197,44 +190,11 @@ input.shortSearch {
     white-space: normal;
 }
 
-.logoutIconCal{
-    position: absolute;
-    flex-direction: row;
-    justify-content: center;
-    display: flex;
-    width: 20%;
-    height: auto;
-    top: 2%;
-    left: 0%;
-    color: white;
-    font-weight: bolder;
-    font-size: 20px;
-}
-.calProfileIcon{
-    position: absolute;
-    flex-direction: row;
-    justify-content: center;
-    display: flex;
-    width: 20%;
-    height: auto;
-    top: 2%;
-    left: 80%;
-    color: white;
-    font-weight: bolder;
-    font-size: 20px;
-}
+
 
 NavLink #row {
     flex-direction: row;
     justify-content: center;
     font-style: normal;
-  }
-  
-.topBarCal {
-    position: sitcky;
-    top: 0%;
-    left:0%;
-    width: 100%;
-    height: 12%;
   }
   
