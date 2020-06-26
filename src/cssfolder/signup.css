@@ -1,18 +1,17 @@
-.allSignUp{
+.allSignUp1{
   background-color: #FBFBFB;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  min-height: 100vh;
+  height: 5vh;
   display: flex;
   text-align: center;
   align-items: center;
   flex-direction: row;
 }
-  .dartCalLogoSmall {
+  .dartCalLogoSmall1 {
     position: absolute;
-    top: 17.89%;
-    bottom:76%;
-    width: 100%;
+    top: 1.5%;
+    left: 3.5%;
     height: 10%;
     
     /* Header I */
@@ -35,80 +34,55 @@
     flex-direction: row;
   }
 
-
-  .accountinfo{
-    position: absolute;
-    flex-direction: column;
-    width: 40%;
-    height: 50%;
-    top: 30%;
-    left: 30%;
-  
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bolder;
-    font-size: 18px;
-    line-height: 29px;
-    text-align: center;
-    color: black;
-
-  }
-
-
   input{
     min-width:250px;
   }
 
-  .signupnameContainer {
-    position: absolute;
-    font-size: 216px;
+  .signupnameContainer1 {
+    position: absolute;    
     
-    
-    left: calc(50% - 216px/2 - 209px);
-    padding: 30px;
-    top: 30.56%;
-    bottom: 65.33%;
+    left: 26%;
+    top: 23%;
     color: #898F89;
 
-
-    font-family: Montserrat;
     font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 39px;
+    font-size: 30px;
     text-align: right;
-
   }
 
-  .signupinputContainer {
+  #signInLabel {
+    margin: 19px;
+    padding: 0px;
+  }
+
+  .signupinputContainer1 {
     position: absolute;
-    font-size: 20px;
-    line-height: 20px;
-    border-radius: 12%;
+    font-size: 30px;
     text-align: left;
-    left: 47%;
-    top: 30%;
-    padding: 50px;
-    margin-top: auto;
-    margin-bottom: auto;
+    left: 49%;
+    top: 24%;
+    height:60%;
+    margin: 0px;
+    padding: 0px;
   }
 
-  .signupindivInput {
+  #inputLabel {
+    margin:10px;
+    padding: 0px;
+  }
+
+  .signupindivInput1 {
     background-color: #FBFBFB;
   }
 
-  .signuporcancelbuttons {
+  .signupbutton1 {
     position: absolute;
-    left: 38%;
-    top: 73%;
+    left: 43%;
+    top: 76%;    
     
-    
-    border-radius: 10px;
-
     font-family: Montserrat;
     font-style: normal;
     font-weight: 300;
     font-size: 30px;
     text-align: center;
-
   }

@@ -86,41 +86,41 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="allSignUp">
-        <div className="dartCalLogoSmall">
+      <div className="allSignUp1">
+        <div className="dartCalLogoSmall1">
           DARTCAL
           <img width="80px" src={logo} style={{"vertical-align":"bottom"}}/>
         </div>
-          <div className="signupnameContainer">
-            <h6>First Name:</h6>
-            <h6>Last Name:</h6>
-            <h6>Email:</h6>
-            <h6>Password:</h6>
-            <h6>Re-Enter Password:</h6>
-            <h6>Year:</h6>
+          <div className="signupnameContainer1">
+            <h6 id="signInLabel">FIRST NAME:</h6>
+            <h6 id="signInLabel">LAST NAME:</h6>
+            <h6 id="signInLabel">EMAIL:</h6>
+            <h6 id="signInLabel">PASSWORD:</h6>
+            <h6 id="signInLabel">RE-ENTER PASSWORD:</h6>
+            <h6 id="signInLabel">YEAR:</h6>
           </div>
-          <div className="signupinputContainer">
-            <div className="signupindivInput">
-              <h6><Input placeholder="YOUR FIRST NAME HERE" onChange={this.onFirstUsernameChange} value={this.state.firstusername} /></h6>
+          <div className="signupinputContainer1">
+            <div className="signupindivInput1">
+              <h6 id = "inputLabel"><Input placeholder="YOUR FIRST NAME HERE" onChange={this.onFirstUsernameChange} value={this.state.firstusername} /></h6>
             </div>
-            <div className="signupindivInput">
-              <h6><Input  placeholder="YOUR LAST NAME HERE" onChange={this.onLastUsernameChange} value={this.state.lastusername} /></h6>
+            <div className="signupindivInput1">
+              <h6 id = "inputLabel"><Input  placeholder="YOUR LAST NAME HERE" onChange={this.onLastUsernameChange} value={this.state.lastusername} /></h6>
             </div>
-            <div className="signupindivInput">
-              <h6><Input placeholder="NAME.YEAR@DARTMOUTH.EDU" onChange={this.onEmailChange} value={this.state.email} /></h6>
+            <div className="signupindivInput1">
+              <h6 id = "inputLabel"><Input placeholder="NAME.YEAR@DARTMOUTH.EDU" onChange={this.onEmailChange} value={this.state.email} /></h6>
             </div>
-            <div className="signupindivInput">
-              <h6><Input type="password"  id="passwordInput" placeholder="AT LEAST 6 CHARACTERS" onChange={this.onPasswordChange} value={this.state.password} /></h6>
+            <div className="signupindivInput1">
+              <h6 id = "inputLabel"><Input type="password"  id="passwordInput" placeholder="AT LEAST 6 CHARACTERS" onChange={this.onPasswordChange} value={this.state.password} /></h6>
             </div>
-            <div className="signupindivInput">
-              <h6><Input type="password"  id="passwordInput" placeholder="AT LEAST 6 CHARACTERS" onChange={this.onPasswordTwoChange} value={this.state.passwordTwo} /></h6>
+            <div className="signupindivInput1">
+              <h6 id = "inputLabel"><Input type="password"  id="passwordInput" placeholder="AT LEAST 6 CHARACTERS" onChange={this.onPasswordTwoChange} value={this.state.passwordTwo} /></h6>
             </div>
-            <div className="signupindivInput">
-              <h6><Input type="classYear"  id="classYear" placeholder="CLASS YEAR" onChange={this.onUserYearChange} value={this.state.userYear}/></h6>
+            <div className="signupindivInput1">
+              <h6 id = "inputLabel"><Input type="classYear"  id="classYear" placeholder="CLASS YEAR" onChange={this.onUserYearChange} value={this.state.userYear}/></h6>
             </div>
           </div>
-          <div className="signuporcancelbuttons">
-            <Button  id="createButton" onClick={this.handleSignupButtonClick}>Create User</Button> &nbsp; 
+          <div className="signupbutton1">
+            <Button  id="createButton" onClick={this.handleSignupButtonClick}>CREATE USER</Button> &nbsp; 
           </div>
       </div>
     );
