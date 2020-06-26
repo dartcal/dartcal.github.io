@@ -304,19 +304,19 @@ class Profile extends Component {
       <div> 
          <ul>
          { (this.state.clubList.length > 0) 
-        ? <li style={{'background-color': '#ADCC80'}}>{this.state.clubList[0]}</li>
+        ? <li className="item" style={{'background-color': '#ADCC80'}}>{this.state.clubList[0]}</li>
         : <div> </div>
          }
          { (this.state.clubList.length > 1) 
-        ? <li style={{'background-color': '#ADCC80'}}>{this.state.clubList[1]}</li>
+        ? <li className="item" style={{'background-color': '#ADCC80'}}>{this.state.clubList[1]}</li>
         : <div> </div>
          }
          { (this.state.clubList.length > 2) 
-        ? <li style={{'background-color': '#ADCC80'}}>{this.state.clubList[2]}</li>
+        ? <li className="item" style={{'background-color': '#ADCC80'}}>{this.state.clubList[2]}</li>
         : <div> </div>
          }
          { (this.state.clubList.length > 3) 
-        ? <li style={{'background-color': '#ADCC80'}}>{this.state.clubList[3]}</li>
+        ? <li className="item" style={{'background-color': '#ADCC80'}}>{this.state.clubList[3]}</li>
         : <div> </div>
          }
          {this.state.editing 
@@ -371,8 +371,19 @@ class Profile extends Component {
                     <a href="#" onClick={() => this.addNewClass("6B")}>6B</a>
                   </div>
                 </div>
+                <div class="colors">
+                  <ul>
+                    <li className="colors" style={{'background-color': '#F7DB93', 'width': '34px', 'height': '40px'}}></li>
+                    <li className="colors" style={{'background-color': '#9FDBEE', 'width': '34px', 'height': '40px'}}></li>
+                    <li className="colors" style={{'background-color': '#F7B0CD', 'width': '34px', 'height': '40px'}}></li>
+                    <li className="colors" style={{'background-color': '#CDA8EB', 'width': '34px', 'height': '40px'}}></li>
+                    <li className="colors" style={{'background-color': '#FDA3A3', 'width': '34px', 'height': '40px'}}></li>
+
+                  </ul>
+
+                </div>
+                <Button style={{'position': 'absolute', 'left': '0%', 'top': '150%'}}>ADD CLASS</Button> 
                
-        
               </div>
               </Modal>
             </div>
@@ -381,24 +392,24 @@ class Profile extends Component {
           
           { (this.state.classList.length > 0) 
          ? <div style={{'display': 'flex', 'flex-direction': 'row'}}>
-            <li style={{'background-color': '#F8DD96'}}>{this.state.classList[0]}</li>
+            <li className="item" style={{'background-color': '#F8DD96'}}>{this.state.classList[0]}</li>
       
           </div>
          : <div> </div>
           }
           { (this.state.classList.length > 1) 
-         ? <li style={{'background-color': '#CFAAEC'}}>{this.state.classList[1]}</li>
+         ? <li className="item" style={{'background-color': '#CFAAEC'}}>{this.state.classList[1]}</li>
          : <div> </div>
           }
           { (this.state.classList.length > 2) 
-         ? <li style={{'background-color': '#F8B2CF'}}>{this.state.classList[2]}</li>
+         ? <li className="item" style={{'background-color': '#F8B2CF'}}>{this.state.classList[2]}</li>
          : <div> </div>
           }
           { (this.state.classList.length > 3) 
-         ? <li>{this.state.classList[3]}</li>
+         ? <li className="item">{this.state.classList[3]}</li>
          : <div> </div>
           }
-          <li style={{'padding-left': '0px'}}><Button onClick={this.toggleModal} className="addClass">+ ADD A CLASS</Button></li>
+          <li className="item" style={{'padding-left': '0px'}}><Button onClick={this.toggleModal} className="addClass">+ ADD A CLASS</Button></li>
           
           </ul>
          </div>
@@ -420,13 +431,13 @@ class Profile extends Component {
         </div>
 
         <div className="infoBlock">
-          <div className="profImage">
+          <div>
           {this.state.editing
             ? <div>
               <h6>Insert Image URL</h6>  
               <Input className="response"  placeholder="Image URL " onChange={this.onImageChange}  value={this.state.image} />
               </div>
-             :<img class="profile" src={this.state.image} width="150" height="150" style={{'border-color':'#000000'}}/>
+             :<img className="profile" src={this.state.image} width="195px" height="195px" style={{'border-color':'#000000'}}/>
             }
           </div>
           <div className="name">
@@ -460,6 +471,47 @@ class Profile extends Component {
         <div class="clubContainer">
           <h3 style={{'text-align': 'left', 'margin-top': '-3px'}}>CLUBS</h3>
           {this.renderClubs()}
+        </div>
+
+        <div class="friendContainer">
+          <h3 style={{'text-align': 'left', 'margin-top': '-3px'}}>FRIENDS</h3>
+          <ul>
+          
+          { (this.state.classList.length > 0) 
+         ? <div>
+              <img onClick={() => this.goToFriend(0)} src={this.state.friendsPics[0]} className="friend"/>
+
+            </div>
+    
+         : <div> </div>
+          }
+          { (this.state.classList.length > 1) 
+         ? <div>
+          <img onClick={() => this.goToFriend(1)} src={this.state.friendsPics[1]} className="friend"/>
+        
+       </div>
+         : <div> </div>
+          }
+          { (this.state.classList.length > 2) 
+         ? <div>
+          <img onClick={() => this.goToFriend(1)} src={this.state.friendsPics[2]} className="friend"/>
+        
+       </div>
+         : <div> </div>
+          }
+          { (this.state.classList.length > 3) 
+         ? <div>
+          <img onClick={() => this.goToFriend(1)} src={this.state.friendsPics[3]} className="friend"/>
+     
+       </div>
+         : <div> </div>
+          }
+          <li className="item" style={{'padding-left': '0px'}}><NavLink to="/searchfriends"><Button className="addFriend" >+ ADD A FRIEND</Button></NavLink></li>
+
+
+         
+          
+          </ul>
         </div>
 
 

@@ -49,7 +49,7 @@
 
   position: absolute;
   width: 25%;
-  height: 85%;
+  height: 96%;
   left: 28px;
   top: 12%;
   background-color: #E9ECE9;
@@ -128,7 +128,7 @@ p.info{
 
 
 }
-li{
+li.item{
   box-sizing: border-box;
   border: 1px solid #000000;
   width: 195px;
@@ -143,7 +143,7 @@ li{
   font-size: 24px;
   padding-left: 60px;
   margin-left: -40px;
-  margin-right: 90px;
+  margin-right: 85px;
   margin-top: -10px;
   
 }
@@ -160,7 +160,6 @@ ul{
   height: 25%;
   left: 30%;
   top: 45%;
-  
 
 }
 
@@ -218,6 +217,19 @@ Button.addClass{
   left: 42%;
   top: 19%;
 }
+
+.colors{
+  position: absolute;
+  width: 70%;
+  left: 12%;
+  top: 110%;
+  height: 20%;
+}
+
+li.colors{
+
+  border-radius: 5px;
+}
 h6.word{
   font-weight: 300;
   font-size: 24px;
@@ -268,11 +280,42 @@ Button.dropbtn {
 
 .dropdown:hover .dropdown-content {display: block;}
 
+.friendContainer{
+  position: absolute;
+  width: 70%;
+  height: 25%;
+  left: 30%;
+  top: 78%;
+}
 
 
+img.friend{
 
+  border: 1px solid #000000;
+  border-color: #000000; 
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+  border-radius: 125.45px;
+  margin-left: -40px;
+  margin-right: 90px;
+  margin-top: -10px;
+  width: 195px;
+  height: 195px;
+}
 
-
+Button.addFriend{
+  cursor: pointer;
+  background-color: Transparent;
+  width: 193px;
+  height: 193px;
+  border-radius: 96px;
+  outline: none;
+  color: #000000;
+  background-color: #C3C8C3;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 20px;
+}
 
 
 /*
