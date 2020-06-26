@@ -58,11 +58,11 @@ class SignIn extends Component {
       <div className="logininfo">
         <div className="inputline">
           Username: &nbsp; 
-          <Input id="emailInputBar" onChange={this.onEmailChange} value={this.state.email} style={{"vertical-align":"top"}}/>
+          <Input id="emailInputBar" onChange={this.onEmailChange} value={this.state.email} style={{"vertical-align":"top", minWidth:'250px'}}/>
         </div>
         <div className="inputline">
           Password: &nbsp; 
-          <Input type="password"  id="passwordInput" onChange={this.onPasswordChange} value={this.state.password} style={{"vertical-align":"top"}}/>
+          <Input type="password"  id="passwordInput" onChange={this.onPasswordChange} value={this.state.password} style={{"vertical-align":"top", minWidth:'250px'}}/>
         </div>
         <Button onClick={this.handleSigninButtonClick} style={{"margin-top":"6%", "width":"150px", "height":"50px"}}>Log In</Button>
         <div className="signup">

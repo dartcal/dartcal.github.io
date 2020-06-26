@@ -377,11 +377,11 @@ class Calendar extends React.Component {
       <div className="addEventModal">
         <Modal show={this.state.isOpen} save={this.saveInfo} onClose={this.toggleModal}>
         <div className="newEventInfo">
-                <div className="inputline"> 
+                <div className="inputlinecal"> 
                   Name: &nbsp;
                   <Input type="text" placeholder="Event Name" value={this.state.eventTitle} onChange={this.createEventTitle}/>
                 </div>
-                <div className="inputline"> 
+                <div className="inputlinecal"> 
                   <Input  type="radio" name="eventType" value="Class" onChange={this.createEventType}/>Classes &nbsp;
                   <Input  type="radio" name="eventType"  value="Club" onChange={this.createEventType}/>Clubs &nbsp;
                   <Input  type="radio" name="eventType" value="Social" onChange={this.createEventType}/>Social &nbsp;

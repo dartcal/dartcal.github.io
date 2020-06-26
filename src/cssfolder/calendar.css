@@ -123,14 +123,6 @@ input.check{
     min-width: 15px;
 }
 
-.chxClass {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    height: 20px;
-    width: 20px;
-    background-color: yellow;
-}
 
 .modal {
     position: absolute;
@@ -140,18 +132,37 @@ input.check{
     height: 60%;
     top: 25%;
     left: 30%;
-    background-color:#CED1DA;
-    border-radius: 50px;
+    background: #FBFBFB;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25), -4px 0px 4px rgba(0, 0, 0, 0.25), 4px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 
 .modalTitle {
-    font-weight: bolder;
-    font-size: 30px;
+    position: absolute;
+    top:4%;
+    width:100%;
     margin-bottom: 10%;
-    top:10%;
+    
+
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 36px;
+
+    text-transform: uppercase;
+
+    color: #000000;
 }
 
+.enterorcancelbuttons{
+    position: absolute;
+    top: 90%;
+}
 .newEventInfo{
     position: absolute;
     flex-direction: column;
@@ -167,26 +178,26 @@ input.check{
   }
 
   .eTypeClass {
-    background: rgba(36, 216, 255, 0.44);
-    color: black;
+    background:#FDE19A;
+    color: #565C57;
     border: none;
   }
 
   .eTypeClub {
-    background: rgba(36, 255, 58, 0.44);
-    color: black;
+    background: #9FDBEE;
+    color: #565C57;
     border: none;
     }
 
 .eTypeSocial {
-    background: rgba(198, 36, 255, 0.44);
-    color: black;
+    background: #ABCA7E;
+    color: #565C57;
     border: none;
     }
 
 .eTypeOther {
-    background: rgba(255, 207, 60, 0.6);
-    color: black;
+    background: #FDA4A4;
+    color: #565C57;
     border: none;
 }
 
