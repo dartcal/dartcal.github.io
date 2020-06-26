@@ -1,12 +1,13 @@
 .navBar {
     position: fixed;
-    height: 10%;
+    height: 80px;
     width: 100%;
     top:0%;
     background-color: #E1E3E2;
     align-content: center;
     vertical-align: middle;
     z-index: 1;
+    opacity: 100%;
 }
 
 .dartCalLogoNav{

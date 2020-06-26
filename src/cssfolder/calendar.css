@@ -11,21 +11,30 @@
     text-align: center;
 }
 
+#navIcon{
+    position: fixed;
+    height: 60px;
+    left: 85%;
+    top: 1%;
+    margin: 0px;
+}
+
 .cal{
     position: absolute;
     width: 78%;
     height: auto;
     left: 20%;
-    top: 10%;
+    top: 11%;
     font-family: Montserrat;
     font-style: normal;
-    background-color: white;
+    background-color: #FBFBFB;
+    z-index: 0;
 }
 .sidebar {
     position: sticky;
     flex-direction: column;
     font-weight: bold;
-    background-color:  #5C6784;;
+    background-color:  #FBFBFB;;
     width: 20%;
     top: 12%;
     height: 100vh;
@@ -39,8 +48,6 @@
     width: 100%;
     height: auto;
     flex-direction: row;
-    color: white;
-    font-weight: bolder;
     font-size: 22px;
 }
 
@@ -63,64 +70,59 @@
     width: 100%;
     height: auto;
     top: 35%;
-    color: white;
-    font-weight: bolder;
+    color: #565C57;
     font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
-.dartCalLogoCal {
-    position: absolute;
-    top: 1%;
-    left: 37.5%;
-    
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 35px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 30%;
-    height: auto;
-    color: white;
-}
 
 .checkbox{
-    color: #1D263B;
     margin-left: 15%;
     text-align: left;
     margin-top: 2%;
+    height: auto;
+    width: auto;
+    flex-direction: row;
 }
+
+label {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    opacity: 0%;
+    
+    /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
+}
+
+
 
 .friendsCal {
     position: sticky;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
-    height: auto;
-    top: 65%;
-    color: white;
-    font-weight: bolder;
-    font-size: 22px;
+    width: 90%;
+    left: 1%;
+    height: 20%;
+    top: 70%;
+    color: #565C57;;
+    font-weight: 300;
+    font-size: 28px;
+    text-transform: uppercase;
+
+    background: #E9ECE9;
+    border-radius: 10px;
 }
 
-.addEventModalFromClick{
-    height: 80%;
+
+input.check{
+    min-width: 15px;
 }
 
-a {
-    color: white;
-}
-
-img {
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
-}
-
-input.shortSearch {
-    min-width:200px;
-}
 
 .modal {
     position: absolute;
@@ -130,18 +132,37 @@ input.shortSearch {
     height: 60%;
     top: 25%;
     left: 30%;
-    background-color:#CED1DA;
-    border-radius: 50px;
+    background: #FBFBFB;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25), -4px 0px 4px rgba(0, 0, 0, 0.25), 4px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 
 .modalTitle {
-    font-weight: bolder;
-    font-size: 30px;
+    position: absolute;
+    top:4%;
+    width:100%;
     margin-bottom: 10%;
-    top:10%;
+    
+
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 36px;
+
+    text-transform: uppercase;
+
+    color: #000000;
 }
 
+.enterorcancelbuttons{
+    position: absolute;
+    top: 90%;
+}
 .newEventInfo{
     position: absolute;
     flex-direction: column;
@@ -157,29 +178,37 @@ input.shortSearch {
   }
 
   .eTypeClass {
-    background: rgba(36, 216, 255, 0.44);
-    color: black;
+    background:#FDE19A;
+    color: #565C57;
     border: none;
   }
 
   .eTypeClub {
-    background: rgba(36, 255, 58, 0.44);
-    color: black;
+    background: #9FDBEE;
+    color: #565C57;
     border: none;
     }
 
 .eTypeSocial {
-    background: rgba(198, 36, 255, 0.44);
-    color: black;
+    background: #ABCA7E;
+    color: #565C57;
     border: none;
     }
 
 .eTypeOther {
-    background: rgba(255, 207, 60, 0.6);
-    color: black;
+    background: #FDA4A4;
+    color: #565C57;
     border: none;
 }
 
+Button#noButton {
+    background: none;
+    border-radius: 0px; 
+    box-shadow: none; 
+    color: #565C57;
+    margin: 0%;
+    vertical-align: top;
+}
 
 .inputlinecal{
     display: absolute;
@@ -193,48 +222,14 @@ input.shortSearch {
     white-space: nowrap;
 }
     
-.fc-title {
+.fc-center {
     white-space: normal;
-}
-
-.logoutIconCal{
-    position: absolute;
-    flex-direction: row;
-    justify-content: center;
-    display: flex;
-    width: 20%;
-    height: auto;
-    top: 2%;
-    left: 0%;
-    color: white;
-    font-weight: bolder;
-    font-size: 20px;
-}
-.calProfileIcon{
-    position: absolute;
-    flex-direction: row;
-    justify-content: center;
-    display: flex;
-    width: 20%;
-    height: auto;
-    top: 2%;
-    left: 80%;
-    color: white;
-    font-weight: bolder;
-    font-size: 20px;
-}
-
-NavLink #row {
-    flex-direction: row;
-    justify-content: center;
     font-style: normal;
-  }
-  
-.topBarCal {
-    position: sitcky;
-    top: 0%;
-    left:0%;
-    width: 100%;
-    height: 12%;
-  }
-  
+    font-weight: 500;
+    font-size: 30px;
+    color: #565C57;
+}
+
+.fc-toolbar.fc-header-toolbar{
+    margin-bottom: .5em;
+}
