@@ -12,7 +12,7 @@ class Modal extends React.Component {
 
     return (
       <div className="modal">
-        <div className="modalTitle"><br></br>Add New Event</div>
+        <div className="modalTitle">Add New Event</div>
           {this.props.children}
           <div className="enterorcancelbuttons" id="longButtons">
             <Button onClick={this.props.save}> Save </Button> &nbsp;

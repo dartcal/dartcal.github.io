@@ -2,7 +2,7 @@
   background-color: #FBFBFB;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  height: 5vh;
+  height: 100vh;
   display: flex;
   text-align: center;
   align-items: center;
@@ -34,7 +34,31 @@
     flex-direction: row;
   }
 
+<<<<<<< HEAD
   input{
+=======
+
+  .accountinfo{
+    position: absolute;
+    flex-direction: column;
+    width: 40%;
+    height: 50%;
+    top: 30%;
+    left: 30%;
+  
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 18px;
+    line-height: 29px;
+    text-align: center;
+    color: black;
+
+  }
+
+
+  input.signup{
+>>>>>>> 7d493bac55e9deb9f82b902f9fd6eaf1c0df8b96
     min-width:250px;
   }
 
