@@ -323,17 +323,6 @@ class Calendar extends React.Component {
 
   }
 
-  data = [
-    {
-      key: 'a',
-      value: 'Annika Kouhia',
-  },
-  {
-    key: 'm',
-    value: 'Morgan Sorbaro',
-  }
-  ]
-
 
   render() {
     console.log(this.state.calendarEvents);
@@ -341,12 +330,12 @@ class Calendar extends React.Component {
     dateClick={this.handleDateClick} 
     plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]} 
     header={{
-      left: "prev,next today",
-      center: "title",
-      right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek"
+      right: "none",
+      center: "title"
     }}
     selectable= {true}
     slotDuration= {'00:30:00'}
+    fixedWeekCount = {false}
     />;
     if(this.state.calendarEvents != null && this.state.calendarEvents.length != 0){
      cal = 
@@ -354,14 +343,15 @@ class Calendar extends React.Component {
       dateClick={this.handleDateClick} 
       plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]} 
       header={{
-        left: "prev,next today",
+        right: "none",
         center: "title",
-        right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek"
+        left: "none"
       }}
       selectable= {true}
       slotDuration= {'00:30:00'}
       eventClick = {this.handleEventClick}
       events= {this.state.calendarEvents}
+      fixedWeekCount = {false}
     />
     }
     
@@ -410,29 +400,48 @@ class Calendar extends React.Component {
       </div>
       <div className="sidebar">
          <div className="addNewEvent">
-            <img width="20px" src={plus}/> 
-            <Button onClick={this.toggleModal}>Add Event</Button>
+            <Button  id="noButton" onClick={this.toggleModal}><img width="40px" src={plus}/> </Button>
+            <Button id="noButton" onClick={this.toggleModal} style={{marginTop:'3px'}}>Add Event</Button>
          </div>
          <div className="toggleCalendarView">
-           Calendar View Options
-           <div className="checkbox"> 
-            <input type="checkbox" checked={this.state.showClasses} onChange={this.handleCheckboxChangeClasses}></input> Classes
+           <span style={{fontSize:'28px', marginBottom:'5%'}}>My Calendars</span>
+
+           <label for="checkClasses" style={{background:'#FDE19A'}}>Classes</label>
+           <input type="checkbox" id="checkClasses" class="visually-hidden" checked={this.state.showClasses} onChange={this.handleCheckboxChangeClasses}/>
+            <br></br>
+            <br></br>
+           <label for="checkClubs" style={{background:'#9FDBEE'}}>Clubs</label>
+           <input type="checkbox" id="checkClubs" class="visually-hidden" checked={this.state.showClubs} onChange={this.handleCheckboxChangeClubs}/>
+            <br></br>
+            <br></br>
+           <label for="checkSocial" style={{background:'#ABCA7E'}}>Social</label>
+           <input type="checkbox" id="checkSocial" class="visually-hidden" checked={this.state.showSocial} onChange={this.handleCheckboxChangeSocial}/>
+            <br></br>
+            <br></br>
+           <label for="checkOther" style={{background:'#FDA4A4'}}>Other</label>
+           <input type="checkbox" id="checkOther" class="visually-hidden" checked={this.state.showOther} onChange={this.handleCheckboxChangeOther}/>
+           {/* <div className="checkbox"> 
+            <input id="checkClass" style={{background:'#FDA4A4'}} className="check" type="checkbox" checked={this.state.showClasses} onChange={this.handleCheckboxChangeClasses}></input>
+            <label for="checkClass" >Classes</label>
            </div>
            <div className="checkbox"> 
-            <input type="checkbox" checked={this.state.showClubs} onChange={this.handleCheckboxChangeClubs}></input> Clubs
+            <input id="checkClubs" className="check" type="checkbox" checked={this.state.showClubs} onChange={this.handleCheckboxChangeClubs}></input> 
+            <label for="checkClubs">Clubs</label>
            </div>
            <div className="checkbox"> 
-            <input type="checkbox" checked={this.state.showSocial} onChange={this.handleCheckboxChangeSocial}></input> Social Events
+            <input id="checkSocial" className="check" type="checkbox" checked={this.state.showSocial} onChange={this.handleCheckboxChangeSocial}></input>
+            <label for="checkSocial">Social</label>
            </div>
            <div className="checkbox"> 
-            <input type="checkbox" checked={this.state.showOther} onChange={this.handleCheckboxChangeOther}></input> Other
-           </div>
+            <input id="checkOther" className="check" type="checkbox" checked={this.state.showOther} onChange={this.handleCheckboxChangeOther}></input> 
+            <label for="checkOther">Other</label>
+           </div> */}
         </div>
         <div className="friendsCal">
-          <div>Friend's Calendars</div>
-          <div style={{color: '#1D263B' }}> 
-            <img width="20px" src={plus}/> 
-            Add Friend
+          Friends
+          <div style={{flexDirection: 'row', width:'100%'}}>
+            <img width="30px" src={plus} style={{float:'left'}}/> 
+            <span style={{fontSize:"16px", float:'left', marginTop:'6px'}}>Add Friend Calendar</span>
           </div>
         </div>
       </div>

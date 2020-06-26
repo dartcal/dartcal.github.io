@@ -24,17 +24,17 @@
     width: 78%;
     height: auto;
     left: 20%;
-    top: 10%;
+    top: 11%;
     font-family: Montserrat;
     font-style: normal;
-    background-color: white;
+    background-color: #FBFBFB;
     z-index: 0;
 }
 .sidebar {
     position: sticky;
     flex-direction: column;
     font-weight: bold;
-    background-color:  #5C6784;;
+    background-color:  #FBFBFB;;
     width: 20%;
     top: 12%;
     height: 100vh;
@@ -48,8 +48,6 @@
     width: 100%;
     height: auto;
     flex-direction: row;
-    color: white;
-    font-weight: bolder;
     font-size: 22px;
 }
 
@@ -72,47 +70,66 @@
     width: 100%;
     height: auto;
     top: 35%;
-    color: white;
-    font-weight: bolder;
+    color: #565C57;
     font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 
 .checkbox{
-    color: #1D263B;
     margin-left: 15%;
     text-align: left;
     margin-top: 2%;
+    height: auto;
+    width: auto;
+    flex-direction: row;
 }
+
+label {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    opacity: 0%;
+    
+    /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
+}
+
+
 
 .friendsCal {
     position: sticky;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
-    height: auto;
-    top: 65%;
-    color: white;
-    font-weight: bolder;
-    font-size: 22px;
+    width: 90%;
+    left: 1%;
+    height: 20%;
+    top: 70%;
+    color: #565C57;;
+    font-weight: 300;
+    font-size: 28px;
+    text-transform: uppercase;
+
+    background: #E9ECE9;
+    border-radius: 10px;
 }
 
-.addEventModalFromClick{
-    height: 80%;
+
+input.check{
+    min-width: 15px;
 }
 
-a {
-    color: white;
-}
-
-img {
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
-}
-
-input.shortSearch {
-    min-width:200px;
+.chxClass {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    height: 20px;
+    width: 20px;
+    background-color: yellow;
 }
 
 .modal {
@@ -173,6 +190,14 @@ input.shortSearch {
     border: none;
 }
 
+Button#noButton {
+    background: none;
+    border-radius: 0px; 
+    box-shadow: none; 
+    color: #565C57;
+    margin: 0%;
+    vertical-align: top;
+}
 
 .inputlinecal{
     display: absolute;
@@ -186,15 +211,14 @@ input.shortSearch {
     white-space: nowrap;
 }
     
-.fc-title {
+.fc-center {
     white-space: normal;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    color: #565C57;
 }
 
-
-
-NavLink #row {
-    flex-direction: row;
-    justify-content: center;
-    font-style: normal;
-  }
-  
+.fc-toolbar.fc-header-toolbar{
+    margin-bottom: .5em;
+}
