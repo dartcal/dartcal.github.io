@@ -425,8 +425,10 @@ class Profile extends Component {
       <div className="allProfile">
         <div className="navBar">
             <div className="dartCalLogoNav">
-                DartCal
-                <img width="45px" src={logo} style={{'margin-left':'5%', 'verticalAlign': 'text-top'}}/>
+                <NavLink to="/calendar" style={{ textDecoration: 'none', color: '#565C57'}}>
+                  DartCal
+                  <img width="45px" src={logo} style={{'margin-left':'5%', 'verticalAlign': 'text-top'}}/>
+                </NavLink>
             </div>
         </div>
 
