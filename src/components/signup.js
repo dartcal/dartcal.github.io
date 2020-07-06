@@ -99,26 +99,6 @@ class SignUp extends Component {
             <h6 id="signInLabel">RE-ENTER PASSWORD:</h6>
             <h6 id="signInLabel">YEAR:</h6>
           </div>
-<<<<<<< HEAD
-          <div className="signupinputContainer1">
-            <div className="signupindivInput1">
-              <h6 id = "inputLabel"><Input placeholder="YOUR FIRST NAME HERE" onChange={this.onFirstUsernameChange} value={this.state.firstusername} /></h6>
-            </div>
-            <div className="signupindivInput1">
-              <h6 id = "inputLabel"><Input  placeholder="YOUR LAST NAME HERE" onChange={this.onLastUsernameChange} value={this.state.lastusername} /></h6>
-            </div>
-            <div className="signupindivInput1">
-              <h6 id = "inputLabel"><Input placeholder="NAME.YEAR@DARTMOUTH.EDU" onChange={this.onEmailChange} value={this.state.email} /></h6>
-            </div>
-            <div className="signupindivInput1">
-              <h6 id = "inputLabel"><Input type="password"  id="passwordInput" placeholder="AT LEAST 6 CHARACTERS" onChange={this.onPasswordChange} value={this.state.password} /></h6>
-            </div>
-            <div className="signupindivInput1">
-              <h6 id = "inputLabel"><Input type="password"  id="passwordInput" placeholder="AT LEAST 6 CHARACTERS" onChange={this.onPasswordTwoChange} value={this.state.passwordTwo} /></h6>
-            </div>
-            <div className="signupindivInput1">
-              <h6 id = "inputLabel"><Input type="classYear"  id="classYear" placeholder="CLASS YEAR" onChange={this.onUserYearChange} value={this.state.userYear}/></h6>
-=======
           <div className="signupinputContainer">
             <div className="signupindivInput">
               <h6><Input placeholder="YOUR FIRST NAME HERE" className="signup" onChange={this.onFirstUsernameChange} value={this.state.firstusername} /></h6>
@@ -137,7 +117,6 @@ class SignUp extends Component {
             </div>
             <div className="signupindivInput">
               <h6><Input type="classYear"  id="classYear" className="signup" placeholder="CLASS YEAR" onChange={this.onUserYearChange} value={this.state.userYear}/></h6>
->>>>>>> 7d493bac55e9deb9f82b902f9fd6eaf1c0df8b96
             </div>
           </div>
           <div className="signupbutton1">

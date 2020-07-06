@@ -34,9 +34,6 @@
     flex-direction: row;
   }
 
-<<<<<<< HEAD
-  input{
-=======
 
   .accountinfo{
     position: absolute;
@@ -58,7 +55,6 @@
 
 
   input.signup{
->>>>>>> 7d493bac55e9deb9f82b902f9fd6eaf1c0df8b96
     min-width:250px;
   }
 
